@@ -1,288 +1,106 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #111827;
+
     font-family:
         Arial,
         "Noto Sans KR",
         sans-serif;
 
-    background:
-        linear-gradient(
-            135deg,
-            #141e30,
-            #243b55
-        );
-
     color: white;
-
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 20px;
 }
 
-.game-container {
-    width: 100%;
-    max-width: 850px;
+.game {
+    width: 850px;
+    max-width: 95%;
 
     text-align: center;
 }
 
 h1 {
-    font-size: 36px;
-
-    margin-bottom: 20px;
-
-    text-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.5);
-}
-
-.game-info {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 10px;
-
     margin-bottom: 15px;
 }
 
-.game-info div {
-    background:
-        rgba(255, 255, 255, 0.12);
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
 
-    border-radius: 12px;
-
-    padding: 10px;
-
-    font-size: 14px;
+    font-size: 18px;
 }
 
-.game-info span {
-    display: block;
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    margin-top: 4px;
-
+.info b {
     color: #ffd166;
-}
-
-.canvas-wrapper {
-    position: relative;
-
-    width: 100%;
-
-    background: #050816;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 15px 40px
-        rgba(0, 0, 0, 0.45);
-
-    border:
-        2px solid
-        rgba(255, 255, 255, 0.2);
 }
 
 canvas {
     display: block;
 
     width: 100%;
-
     height: auto;
 
-    background:
-        radial-gradient(
-            circle at center,
-            #101b3d,
-            #03050d
-        );
+    background: #050816;
+
+    border: 3px solid #374151;
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.message {
-    position: absolute;
+.buttons {
+    margin-top: 20px;
 
-    left: 50%;
-    top: 50%;
+    display: flex;
+    justify-content: center;
 
-    transform:
-        translate(-50%, -50%);
-
-    width: 80%;
-
-    padding: 30px;
-
-    background:
-        rgba(0, 0, 0, 0.78);
-
-    border-radius: 20px;
-
-    backdrop-filter: blur(8px);
-
-    text-align: center;
-}
-
-.message h2 {
-    font-size: 32px;
-
-    margin-bottom: 10px;
-}
-
-.message p {
-    margin-bottom: 20px;
-
-    color: #ddd;
+    gap: 15px;
 }
 
 button {
+    padding: 12px 25px;
+
     border: none;
+    border-radius: 8px;
 
-    border-radius: 10px;
+    background: #2563eb;
 
-    padding: 12px 22px;
+    color: white;
 
     font-size: 16px;
-
     font-weight: bold;
 
     cursor: pointer;
-
-    transition:
-        transform 0.15s,
-        opacity 0.15s;
 }
 
 button:hover {
-    transform: scale(1.05);
+    background: #1d4ed8;
 }
 
-button:active {
-    transform: scale(0.95);
-}
-
-#startButton {
-    background:
-        linear-gradient(
-            135deg,
-            #ff6b6b,
-            #ff8e53
-        );
-
-    color: white;
-
-    padding: 14px 30px;
-
-    font-size: 18px;
-}
-
-.controls {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-top: 18px;
-}
-
-.controls button {
-    min-width: 80px;
-
-    background:
-        rgba(255, 255, 255, 0.15);
-
-    color: white;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.25);
-}
-
-#leftButton,
-#rightButton {
-    font-size: 25px;
-
-    width: 100px;
-
-    height: 55px;
-}
-
-#pauseButton {
-    width: 130px;
-
-    height: 50px;
-}
-
-.keyboard-info {
-    margin-top: 15px;
-
-    color: #aaa;
-
-    font-size: 14px;
+p {
+    color: #9ca3af;
 }
 
 @media (max-width: 600px) {
 
-    body {
-        padding: 10px;
+    .info {
+        gap: 15px;
+        font-size: 14px;
     }
 
-    h1 {
-        font-size: 27px;
-    }
-
-    .game-info {
-        gap: 5px;
-    }
-
-    .game-info div {
-        padding: 7px;
-
-        font-size: 11px;
-    }
-
-    .game-info span {
-        font-size: 17px;
-    }
-
-    .controls {
-        gap: 8px;
-    }
-
-    #leftButton,
-    #rightButton {
-        width: 80px;
-    }
-
-    #pauseButton {
-        width: 100px;
-
-        font-size: 13px;
-    }
-
-    .keyboard-info {
-        font-size: 11px;
+    button {
+        padding: 10px 18px;
     }
 }

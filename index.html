@@ -1,82 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>벽돌 깨기 게임</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="game-container">
+    <div class="game">
+        <h1>🧱 벽돌 깨기</h1>
 
-    <h1>🧱 벽돌 깨기</h1>
-
-    <div class="game-info">
-
-        <div>
-            점수
-            <span id="score">0</span>
+        <div class="info">
+            <span>점수: <b id="score">0</b></span>
+            <span>목숨: <b id="lives">3</b></span>
+            <span>레벨: <b id="level">1</b></span>
         </div>
 
-        <div>
-            레벨
-            <span id="level">1</span>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+        <div class="buttons">
+            <button id="startBtn">게임 시작</button>
+            <button id="pauseBtn">일시정지</button>
         </div>
 
-        <div>
-            목숨
-            <span id="lives">3</span>
-        </div>
-
-        <div>
-            최고점수
-            <span id="highScore">0</span>
-        </div>
-
+        <p>← → 방향키 또는 A / D 키로 패들을 움직이세요.</p>
     </div>
 
-    <div class="canvas-wrapper">
-        <canvas id="gameCanvas"
-                width="800"
-                height="600">
-        </canvas>
-
-        <div id="message" class="message">
-            <h2>벽돌 깨기</h2>
-            <p>게임을 시작하세요!</p>
-            <button id="startButton">게임 시작</button>
-        </div>
-    </div>
-
-    <div class="controls">
-
-        <button id="leftButton">
-            ◀
-        </button>
-
-        <button id="pauseButton">
-            일시정지
-        </button>
-
-        <button id="rightButton">
-            ▶
-        </button>
-
-    </div>
-
-    <div class="keyboard-info">
-        키보드의 ← → 또는 A / D 키로 이동
-    </div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
